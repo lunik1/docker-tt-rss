@@ -7,18 +7,7 @@ NOT supported or endorsed by the linuxserver.io team.
 
 ### docker
 
-```
-docker create \
-  --name=tt-rss \
-  -e PUID=1000 \
-  -e PGID=1000 \
-  -e TZ=Europe/London \
-  -p 80:80 \
-  -v <path to data>:/config \
-  --restart unless-stopped \
-  linuxserver/tt-rss
-```
-
+TODO
 
 ### docker-compose
 
@@ -29,7 +18,7 @@ Compatible with docker-compose v2 schemas.
 version: "2"
 services:
   tt-rss:
-    image: linuxserver/tt-rss
+    build: https://gitlab.com/lunik1/ttrss-docker.git
     container_name: tt-rss
     environment:
       - PUID=1000
