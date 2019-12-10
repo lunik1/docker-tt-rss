@@ -4,8 +4,8 @@ FROM lsiobase/nginx:3.10
 ARG BUILD_DATE
 ARG VERSION
 ARG TT_RSS_VERSION
-LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="sparklyballs"
+LABEL build_version="master ${BUILD_DATE}"
+LABEL maintainer="lunik1"
 
 RUN \
  echo "**** install packages ****" && \
@@ -33,7 +33,7 @@ RUN \
  mkdir -p \
 	/var/www/html/ && \
  if [ -z ${TT_RSS_VERSION+x} ]; then \
- 	TT_RSS_VERSION=$(git ls-remote https://git.tt-rss.org/fox/tt-rss.git HEAD | cut -c1-8); \
+ 	TT_RSS_VERSION=master; \
  fi && \
  curl -o \
 	/tmp/ttrss.tar.gz -L \
