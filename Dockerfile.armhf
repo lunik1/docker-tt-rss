@@ -37,7 +37,7 @@ RUN \
  fi && \
  curl -o \
 	/tmp/ttrss.tar.gz -L \
-	"https://git.tt-rss.org/git/tt-rss/archive/${TT_RSS_VERSION}.tar.gz" && \
+	"https://gitlab.com/lunik1/tt-rss/-/archive/master/tt-rss-${TT_RSS_VERSION}.tar.gz" && \
  tar xf \
  /tmp/ttrss.tar.gz -C \
 	/var/www/html/ --strip-components=1 && \
