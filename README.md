@@ -18,7 +18,7 @@ Compatible with docker-compose v2 schemas.
 version: "2"
 services:
   tt-rss:
-    build: https://gitlab.com/lunik1/ttrss-docker.git
+    build: https://github.com/lunik1/docker-tt-rss.git
     container_name: tt-rss
     environment:
       - PUID=1000
