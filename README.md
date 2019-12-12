@@ -1,5 +1,6 @@
 A fork of the deprecated linuxserver.io tt-rss container. Uses latest
-master of tt-rss when built.
+master of tt-rss when built and rebult when commits are added to the
+tt-rss master branch.
 
 NOT supported or endorsed by the linuxserver.io team.
 
@@ -7,7 +8,17 @@ NOT supported or endorsed by the linuxserver.io team.
 
 ### docker
 
-TODO
+```
+docker create \
+  --name=tt-rss \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Europe/London \
+  -p 80:80 \
+  -v <path to data>:/config \
+  --restart unless-stopped \
+  lunik1/tt-rss
+```
 
 ### docker-compose
 
@@ -18,7 +29,7 @@ Compatible with docker-compose v2 schemas.
 version: "2"
 services:
   tt-rss:
-    build: https://github.com/lunik1/docker-tt-rss.git
+    image: lunik1/tt-rss
     container_name: tt-rss
     environment:
       - PUID=1000
