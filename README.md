@@ -1,6 +1,6 @@
-A fork of the deprecated linuxserver.io tt-rss container. Uses latest
-master of tt-rss when built and rebult when commits are added to the
-tt-rss master branch.
+A fork of the deprecated linuxserver.io tt-rss container. Uses latest master of
+tt-rss when built and rebuilds are triggered when commits are added to the
+tt-rss master branch or the base container is updated.
 
 NOT supported or endorsed by the linuxserver.io team.
 
