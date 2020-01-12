@@ -11,8 +11,6 @@ RUN \
  echo "**** install packages ****" && \
  apk add --no-cache --upgrade \
 	curl \
-	git \
-	grep \
 	php7-apcu \
 	php7-curl \
 	php7-dom \
