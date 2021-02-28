@@ -22,37 +22,81 @@ for i in "${symlinks[@]}"; do
 done
 
 # translate legacy variables
-printf "${DB_TYPE}" > /var/run/s6/container_environment/TTRSS_DB_TYPE
-printf "${DB_HOST}" > /var/run/s6/container_environment/TTRSS_DB_HOST
-printf "${DB_USER}" > /var/run/s6/container_environment/TTRSS_DB_USER
-printf "${DB_NAME}" > /var/run/s6/container_environment/TTRSS_DB_NAME
-printf "${DB_PASS}" > /var/run/s6/container_environment/TTRSS_DB_PASS
-printf "${DB_PORT}" > /var/run/s6/container_environment/TTRSS_DB_PORT
-printf "${MYSQL_CHARSET}" > /var/run/s6/container_environment/TTRSS_MYSQL_CHARSET
-printf "${SELF_URL_PATH}" > /var/run/s6/container_environment/TTRSS_SELF_URL_PATH
-printf "${SINGLE_USER_MODE}" > /var/run/s6/container_environment/TTRSS_SINGLE_USER_MODE
-printf "${SIMPLE_UPDATE_MODE}" > /var/run/s6/container_environment/TTRSS_SIMPLE_UPDATE_MODE
-printf "${PHP_EXECUTABLE}" > /var/run/s6/container_environment/TTRSS_PHP_EXECUTABLE
-printf "${LOCK_DIRECTORY}" > /var/run/s6/container_environment/TTRSS_LOCK_DIRECTORY
-printf "${CACHE_DIR}" > /var/run/s6/container_environment/TTRSS_CACHE_DIR
-printf "${ICONS_DIR}" > /var/run/s6/container_environment/TTRSS_ICONS_DIR
-printf "${ICONS_URL}" > /var/run/s6/container_environment/TTRSS_ICONS_URL
-printf "${AUTH_AUTO_CREATE}" > /var/run/s6/container_environment/TTRSS_AUTH_AUTO_CREATE
-printf "${AUTH_AUTO_LOGIN}" > /var/run/s6/container_environment/TTRSS_AUTH_AUTO_LOGIN
-printf "${FORCE_ARTICLE_PURGE}" > /var/run/s6/container_environment/TTRSS_FORCE_ARTICLE_PURGE
-printf "${SPHINX_SERVER}" > /var/run/s6/container_environment/TTRSS_SPHINX_SERVER
-printf "${SPHINX_INDEX}" > /var/run/s6/container_environment/TTRSS_SPHINX_INDEX
-printf "${ENABLE_REGISTRATION}" > /var/run/s6/container_environment/TTRSS_ENABLE_REGISTRATION
-printf "${REG_NOTIFY_ADDRESS}" > /var/run/s6/container_environment/TTRSS_REG_NOTIFY_ADDRESS
-printf "${REG_MAX_USERS}" > /var/run/s6/container_environment/TTRSS_REG_MAX_USERS
-printf "${SESSION_COOKIE_LIFETIME}" > /var/run/s6/container_environment/TTRSS_SESSION_COOKIE_LIFETIME
-printf "${SMTP_FROM_NAME}" > /var/run/s6/container_environment/TTRSS_SMTP_FROM_NAME
-printf "${SMTP_FROM_ADDRESS}" > /var/run/s6/container_environment/TTRSS_SMTP_FROM_ADDRESS
-printf "${DIGEST_SUBJECT}" > /var/run/s6/container_environment/TTRSS_DIGEST_SUBJECT
-printf "${CHECK_FOR_UPDATES}" > /var/run/s6/container_environment/TTRSS_CHECK_FOR_UPDATES
-printf "${ENABLE_GZIP_OUTPUT}" > /var/run/s6/container_environment/TTRSS_ENABLE_GZIP_OUTPUT
-printf "${PLUGINS}" > /var/run/s6/container_environment/TTRSS_PLUGINS
-printf "${LOG_DESTINATION}" > /var/run/s6/container_environment/TTRSS_LOG_DESTINATION
+if [[ -v DB_TYPE ]]; then
+     printf "${DB_TYPE}" > /var/run/s6/container_environment/TTRSS_DB_TYPE
+fi
+if [[ -v DB_HOST ]]; then
+    printf "${DB_HOST}" > /var/run/s6/container_environment/TTRSS_DB_HOST
+fi
+if [[ -v DB_USER ]]; then
+    printf "${DB_USER}" > /var/run/s6/container_environment/TTRSS_DB_USER
+fi
+if [[ -v DB_NAME ]]; then
+    printf "${DB_NAME}" > /var/run/s6/container_environment/TTRSS_DB_NAME
+fi
+if [[ -v DB_PASS ]]; then
+    printf "${DB_PASS}" > /var/run/s6/container_environment/TTRSS_DB_PASS
+fi
+if [[ -v DB_PORT ]]; then
+    printf "${DB_PORT}" > /var/run/s6/container_environment/TTRSS_DB_PORT
+fi
+if [[ -v MYSQL_CHARSET ]]; then
+    printf "${MYSQL_CHARSET}" > /var/run/s6/container_environment/TTRSS_MYSQL_CHARSET
+fi
+if [[ -v SELF_URL_PATH ]]; then
+    printf "${SELF_URL_PATH}" > /var/run/s6/container_environment/TTRSS_SELF_URL_PATH
+fi
+if [[ -v SINGLE_USER_MODE ]]; then
+    printf "${SINGLE_USER_MODE}" > /var/run/s6/container_environment/TTRSS_SINGLE_USER_MODE
+fi
+if [[ -v SIMPLE_UPDATE_MODE ]]; then
+    printf "${SIMPLE_UPDATE_MODE}" > /var/run/s6/container_environment/TTRSS_SIMPLE_UPDATE_MODE
+fi
+if [[ -v PHP_EXECUTABLE ]]; then
+    printf "${PHP_EXECUTABLE}" > /var/run/s6/container_environment/TTRSS_PHP_EXECUTABLE
+fi
+if [[ -v LOCK_DIRECTORY ]]; then
+    printf "${LOCK_DIRECTORY}" > /var/run/s6/container_environment/TTRSS_LOCK_DIRECTORY
+fi
+if [[ -v CACHE_DIR ]]; then
+    printf "${CACHE_DIR}" > /var/run/s6/container_environment/TTRSS_CACHE_DIR
+fi
+if [[ -v ICONS_DIR ]]; then
+    printf "${ICONS_DIR}" > /var/run/s6/container_environment/TTRSS_ICONS_DIR
+fi
+if [[ -v ICONS_URL ]]; then
+    printf "${ICONS_URL}" > /var/run/s6/container_environment/TTRSS_ICONS_URL
+fi
+if [[ -v AUTH_AUTO_CREATE ]]; then
+    printf "${AUTH_AUTO_CREATE}" > /var/run/s6/container_environment/TTRSS_AUTH_AUTO_CREATE
+fi
+if [[ -v AUTH_AUTO_LOGIN ]]; then
+    printf "${AUTH_AUTO_LOGIN}" > /var/run/s6/container_environment/TTRSS_AUTH_AUTO_LOGIN
+fi
+if [[ -v FORCE_ARTICLE_PURGE ]]; then
+    printf "${FORCE_ARTICLE_PURGE}" > /var/run/s6/container_environment/TTRSS_FORCE_ARTICLE_PURGE
+fi
+if [[ -v SESSION_COOKIE_LIFETIME ]]; then
+    printf "${SESSION_COOKIE_LIFETIME}" > /var/run/s6/container_environment/TTRSS_SESSION_COOKIE_LIFETIME
+fi
+if [[ -v SMTP_FROM_NAME ]]; then
+    printf "${SMTP_FROM_NAME}" > /var/run/s6/container_environment/TTRSS_SMTP_FROM_NAME
+fi
+if [[ -v SMTP_FROM_ADDRESS ]]; then
+    printf "${SMTP_FROM_ADDRESS}" > /var/run/s6/container_environment/TTRSS_SMTP_FROM_ADDRESS
+fi
+if [[ -v DIGEST_SUBJECT ]]; then
+    printf "${DIGEST_SUBJECT}" > /var/run/s6/container_environment/TTRSS_DIGEST_SUBJECT
+fi
+if [[ -v CHECK_FOR_UPDATES ]]; then
+    printf "${CHECK_FOR_UPDATES}" > /var/run/s6/container_environment/TTRSS_CHECK_FOR_UPDATES
+fi
+if [[ -v PLUGINS ]]; then
+    printf "${PLUGINS}" > /var/run/s6/container_environment/TTRSS_PLUGINS
+fi
+if [[ -v LOG_DESTINATION ]]; then
+    printf "${LOG_DESTINATION}" > /var/run/s6/container_environment/TTRSS_LOG_DESTINATION
+fi
 
 # permissions
 chown -R abc:abc \
