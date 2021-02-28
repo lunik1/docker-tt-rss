@@ -23,78 +23,103 @@ done
 
 # translate legacy variables
 if [[ -v DB_TYPE ]]; then
-     printf "${DB_TYPE}" > /var/run/s6/container_environment/TTRSS_DB_TYPE
+    printf "WARNING: Deprecated environment variable DB_TYPE used. Replace with TTRSS_DB_TYPE.\n"
+    printf "${DB_TYPE}" > /var/run/s6/container_environment/TTRSS_DB_TYPE
 fi
 if [[ -v DB_HOST ]]; then
+    printf "WARNING: Deprecated environment variable DB_HOST used. Replace with TTRSS_DB_HOST.\n"
     printf "${DB_HOST}" > /var/run/s6/container_environment/TTRSS_DB_HOST
 fi
 if [[ -v DB_USER ]]; then
+    printf "WARNING: Deprecated environment variable DB_USER used. Replace with TTRSS_DB_USER.\n"
     printf "${DB_USER}" > /var/run/s6/container_environment/TTRSS_DB_USER
 fi
 if [[ -v DB_NAME ]]; then
+    printf "WARNING: Deprecated environment variable DB_NAME used. Replace with TTRSS_DB_NAME.\n"
     printf "${DB_NAME}" > /var/run/s6/container_environment/TTRSS_DB_NAME
 fi
 if [[ -v DB_PASS ]]; then
+    printf "WARNING: Deprecated environment variable DB_PASS used. Replace with TTRSS_DB_PASS.\n"
     printf "${DB_PASS}" > /var/run/s6/container_environment/TTRSS_DB_PASS
 fi
 if [[ -v DB_PORT ]]; then
+    printf "WARNING: Deprecated environment variable DB_PORT used. Replace with TTRSS_DB_PORT.\n"
     printf "${DB_PORT}" > /var/run/s6/container_environment/TTRSS_DB_PORT
 fi
 if [[ -v MYSQL_CHARSET ]]; then
+    printf "WARNING: Deprecated environment variable MYSQL_CHARSET used. Replace with TTRSS_MYSQL_CHARSET.\n"
     printf "${MYSQL_CHARSET}" > /var/run/s6/container_environment/TTRSS_MYSQL_CHARSET
 fi
 if [[ -v SELF_URL_PATH ]]; then
+    printf "WARNING: Deprecated environment variable SELF_URL_PATH used. Replace with TTRSS_SELF_URL_PATH.\n"
     printf "${SELF_URL_PATH}" > /var/run/s6/container_environment/TTRSS_SELF_URL_PATH
 fi
 if [[ -v SINGLE_USER_MODE ]]; then
+    printf "WARNING: Deprecated environment variable SINGLE_USER_MODE used. Replace with TTRSS_SINGLE_USER_MODE.\n"
     printf "${SINGLE_USER_MODE}" > /var/run/s6/container_environment/TTRSS_SINGLE_USER_MODE
 fi
 if [[ -v SIMPLE_UPDATE_MODE ]]; then
+    printf "WARNING: Deprecated environment variable SIMPLE_UPDATE_MODE used. Replace with TTRSS_SIMPLE_UPDATE_MODE.\n"
     printf "${SIMPLE_UPDATE_MODE}" > /var/run/s6/container_environment/TTRSS_SIMPLE_UPDATE_MODE
 fi
 if [[ -v PHP_EXECUTABLE ]]; then
+    printf "WARNING: Deprecated environment variable PHP_EXECUTABLE used. Replace with TTRSS_PHP_EXECUTABLE.\n"
     printf "${PHP_EXECUTABLE}" > /var/run/s6/container_environment/TTRSS_PHP_EXECUTABLE
 fi
 if [[ -v LOCK_DIRECTORY ]]; then
+    printf "WARNING: Deprecated environment variable LOCK_DIRECTORY used. Replace with TTRSS_LOCK_DIRECTORY.\n"
     printf "${LOCK_DIRECTORY}" > /var/run/s6/container_environment/TTRSS_LOCK_DIRECTORY
 fi
 if [[ -v CACHE_DIR ]]; then
+    printf "WARNING: Deprecated environment variable CACHE_DIR used. Replace with TTRSS_CACHE_DIR.\n"
     printf "${CACHE_DIR}" > /var/run/s6/container_environment/TTRSS_CACHE_DIR
 fi
 if [[ -v ICONS_DIR ]]; then
+    printf "WARNING: Deprecated environment variable ICONS_DIR used. Replace with TTRSS_ICONS_DIR.\n"
     printf "${ICONS_DIR}" > /var/run/s6/container_environment/TTRSS_ICONS_DIR
 fi
 if [[ -v ICONS_URL ]]; then
+    printf "WARNING: Deprecated environment variable ICONS_URL used. Replace with TTRSS_ICONS_URL.\n"
     printf "${ICONS_URL}" > /var/run/s6/container_environment/TTRSS_ICONS_URL
 fi
 if [[ -v AUTH_AUTO_CREATE ]]; then
+    printf "WARNING: Deprecated environment variable AUTH_AUTO_CREATE used. Replace with TTRSS_AUTH_AUTO_CREATE.\n"
     printf "${AUTH_AUTO_CREATE}" > /var/run/s6/container_environment/TTRSS_AUTH_AUTO_CREATE
 fi
 if [[ -v AUTH_AUTO_LOGIN ]]; then
+    printf "WARNING: Deprecated environment variable AUTH_AUTO_LOGIN used. Replace with TTRSS_AUTH_AUTO_LOGIN.\n"
     printf "${AUTH_AUTO_LOGIN}" > /var/run/s6/container_environment/TTRSS_AUTH_AUTO_LOGIN
 fi
 if [[ -v FORCE_ARTICLE_PURGE ]]; then
+    printf "WARNING: Deprecated environment variable FORCE_ARTICLE_PURGE used. Replace with TTRSS_FORCE_ARTICLE_PURGE.\n"
     printf "${FORCE_ARTICLE_PURGE}" > /var/run/s6/container_environment/TTRSS_FORCE_ARTICLE_PURGE
 fi
 if [[ -v SESSION_COOKIE_LIFETIME ]]; then
+    printf "WARNING: Deprecated environment variable SESSION_COOKIE_LIFETIME used. Replace with TTRSS_SESSION_COOKIE_LIFETIME.\n"
     printf "${SESSION_COOKIE_LIFETIME}" > /var/run/s6/container_environment/TTRSS_SESSION_COOKIE_LIFETIME
 fi
 if [[ -v SMTP_FROM_NAME ]]; then
+    printf "WARNING: Deprecated environment variable SMTP_FROM_NAME used. Replace with TTRSS_SMTP_FROM_NAME.\n"
     printf "${SMTP_FROM_NAME}" > /var/run/s6/container_environment/TTRSS_SMTP_FROM_NAME
 fi
 if [[ -v SMTP_FROM_ADDRESS ]]; then
+    printf "WARNING: Deprecated environment variable SMTP_FROM_ADDRESS used. Replace with TTRSS_SMTP_FROM_ADDRESS.\n"
     printf "${SMTP_FROM_ADDRESS}" > /var/run/s6/container_environment/TTRSS_SMTP_FROM_ADDRESS
 fi
 if [[ -v DIGEST_SUBJECT ]]; then
+    printf "WARNING: Deprecated environment variable SMTP_DIGEST_SUBJECT used. Replace with TTRSS_SMTP_DIGEST_SUBJECT.\n"
     printf "${DIGEST_SUBJECT}" > /var/run/s6/container_environment/TTRSS_DIGEST_SUBJECT
 fi
 if [[ -v CHECK_FOR_UPDATES ]]; then
+    printf "WARNING: Deprecated environment variable CHECK_FOR_UPDATES used. Replace with TTRSS_CHECK_FOR_UPDATES.\n"
     printf "${CHECK_FOR_UPDATES}" > /var/run/s6/container_environment/TTRSS_CHECK_FOR_UPDATES
 fi
 if [[ -v PLUGINS ]]; then
+    printf "WARNING: Deprecated environment variable PLUGINS used. Replace with TTRSS_PLUGINS.\n"
     printf "${PLUGINS}" > /var/run/s6/container_environment/TTRSS_PLUGINS
 fi
 if [[ -v LOG_DESTINATION ]]; then
+    printf "WARNING: Deprecated environment variable LOG_DESTINATION used. Replace with TTRSS_LOG_DESTINATION.\n"
     printf "${LOG_DESTINATION}" > /var/run/s6/container_environment/TTRSS_LOG_DESTINATION
 fi
 
