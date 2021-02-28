@@ -1,6 +1,4 @@
-A fork of the deprecated linuxserver.io tt-rss container. Uses latest master of
-tt-rss when built and rebuilds are triggered when commits are added to the
-tt-rss master branch or the base container is updated.
+A fork of the deprecated linuxserver.io tt-rss container. Uses latest master of tt-rss when built and rebuilds are triggered when commits are added to the tt-rss master branch or the base container is updated.
 
 Find the Image on Docker Hub: [https://hub.docker.com/r/lunik1/tt-rss](https://hub.docker.com/r/lunik1/tt-rss)
 
@@ -73,14 +71,16 @@ You must create a user and database for tt-rss to use in a mysql/mariadb or post
 
 **The default username and password after initial configuration is admin/password**
 
-## Power users
-The container can configure itself using environment variables, the gaurd for this logic to run is if the variable `DB_TYPE` is set. The most common variables to set are a URL for the application and a database endpoint. IE:
-* -e DB_TYPE=mysql
-* -e DB_HOST=host
-* -e DB_USER=user
-* -e DB_NAME=name
-* -e DB_PASS=password
-* -e DB_PORT=3306
-* -e SELF_URL_PATH=http://localhost/
+## Application Configuration
+The container can configure itself using environment variables, this is now preferred over using `config.php`. The most common variables to set are a URL for the application and a database endpoint. IE:
+* -e TTRSS_DB_TYPE=mysql
+* -e TTRSS_DB_HOST=host
+* -e TTRSS_DB_USER=user
+* -e TTRSS_DB_NAME=name
+* -e TTRSS_DB_PASS=password
+* -e TTRSS_DB_PORT=3306
+* -e TTRSS_SELF_URL_PATH=http://localhost/
 
-Please note if you use this method you need to have an already initialized database endpoint.
+For a full list of supported variables and their defaults see [here](https://git.tt-rss.org/fox/tt-rss/src/branch/master/classes/config.php#L57).
+
+Please note you need to have an already initialized database endpoint.

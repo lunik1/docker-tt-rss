@@ -45,6 +45,10 @@ RUN \
  rm -rf \
 	/tmp/*
 
+RUN \
+ echo "**** configure php ****" && \
+ sed -i 's/^;clear_env/clear_env/i' /etc/php7/php-fpm.d/www.conf
+
 # copy local files
 COPY root/ /
 
