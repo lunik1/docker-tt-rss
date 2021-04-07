@@ -52,6 +52,9 @@ LABEL maintainer="lunik1"
 # Copy root filesystem
 COPY root /
 
+# Set shell
+SHELL ["/bin/ash", "-o", "pipefail", "-c"]
+
 RUN \
     set -o pipefail \
     \
