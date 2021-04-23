@@ -1,9 +1,5 @@
 FROM ghcr.io/linuxserver/baseimage-alpine-nginx:arm32v7-3.12
 
-# set version label
-ARG BUILD_DATE
-ARG VERSION
-ARG TT_RSS_VERSION
 LABEL build_version="master ${BUILD_DATE}"
 LABEL maintainer="lunik1"
 
@@ -30,12 +26,9 @@ RUN \
  echo "**** install software ****" && \
  mkdir -p \
 	/var/www/html/ && \
- if [ -z ${TT_RSS_VERSION+x} ]; then \
- 	TT_RSS_VERSION=master; \
- fi && \
  curl -o \
 	/tmp/ttrss.tar.gz -L \
-	"https://gitlab.com/lunik1/tt-rss/-/archive/master/tt-rss-${TT_RSS_VERSION}.tar.gz" && \
+	"https://gitlab.com/lunik1/tt-rss/-/archive/master/tt-rss-master.tar.gz" && \
  tar xf \
  /tmp/ttrss.tar.gz -C \
 	/var/www/html/ --strip-components=1 && \
