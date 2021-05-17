@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.13
+FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.12
 
 LABEL build_version="master"
 LABEL maintainer="lunik1"
