@@ -1,3 +1,12 @@
+# DEPRECATION NOTICE
+
+This repository has been deprecated, development continues at
+https://gitlab.com/lunik1/docker-tt-rss.
+
+The container image is now hosted at registry.gitlab.com/lunik1/docker-tt-rss.
+
+# Original README
+
 A fork of the deprecated linuxserver.io tt-rss container. Uses latest master of tt-rss when built and rebuilds are triggered when commits are added to the tt-rss master branch or the base container is updated.
 
 Find the Image on Docker Hub: [https://hub.docker.com/r/lunik1/tt-rss](https://hub.docker.com/r/lunik1/tt-rss)

@@ -21,6 +21,8 @@ for i in "${symlinks[@]}"; do
 		ln -s /config/"$(basename "$i")" "$i"
 done
 
+printf "WARNING: This image has been DEPRECATED, please use registry.gitlab.com/lunik1/docker-tt-rss from now on."
+
 # translate legacy variables
 if [[ -v DB_TYPE ]]; then
     printf "WARNING: Deprecated environment variable DB_TYPE used. Replace with TTRSS_DB_TYPE.\n"
